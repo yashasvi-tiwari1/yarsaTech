@@ -29,7 +29,7 @@ const TopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="top-button"
+      className="top-button "
       style={{ display: isVisible ? "block" : "none" }}
     >
       <IconCircleChevronsUp className="h-9 w-9" />

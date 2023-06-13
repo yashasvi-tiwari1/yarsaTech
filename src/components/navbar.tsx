@@ -32,7 +32,7 @@ function Navbar() {
             alt="Yarsa Tech"
           />
 
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-black">
             Yarsa Tech
           </span>
         </Link>

@@ -61,6 +61,7 @@ function OurProducts() {
               <IconSearch className="text-gray-500 w-6 h-6 ml-10 mb-2" />
               <span className="sr-only">Search icon</span>
             </div>
+            <TopButton/>
             <input
               type="text"
               id="search_navbar"
@@ -120,7 +121,6 @@ const Card = ({ product }: any) => {
           </button>
         </div>
       </div>
-      <TopButton />
     </div>
   );
 };

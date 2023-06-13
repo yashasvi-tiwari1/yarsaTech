@@ -14,7 +14,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-900 end-0 border-t">
+    <footer className="bg-white dark:bg-gray-900 end-0 border-t text-black dark:text-white">
       <div className="md:flex space-y-6 flex-wrap justify-between px-8 container md:px-16 py-5">
         <div className="">
           <div className="flex items-center mt-3">

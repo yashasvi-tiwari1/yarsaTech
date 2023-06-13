@@ -7,6 +7,12 @@
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
 }
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -14,6 +20,15 @@
         --background-start-rgb: 0, 0, 0;
         --background-end-rgb: 0, 0, 0;
     }
+}
+
+.top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: none;
+    /* Add your desired styles for the button */
 }
 
 body {

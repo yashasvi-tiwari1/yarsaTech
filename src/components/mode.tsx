@@ -24,7 +24,7 @@ function Mode() {
           </button>
         ) : (
           <button
-            className="p-1 hover:bg-gray-100 rounded-md"
+            className="p-1 hover:bg-gray-100 text-black rounded-md"
             onClick={() => setTheme("dark")}
           >
             <IconMoon strokeWidth={1.5} className="h-6 w-6" />
