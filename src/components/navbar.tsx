@@ -13,7 +13,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white border dark:bg-gray-900 h-max">
+    <nav className="bg-gray-50 border dark:bg-gray-900 h-max">
       <div className="container md:px-16 px-8 flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center">
           <Image
@@ -67,7 +67,7 @@ function Navbar() {
               placeholder="Search..."
             />
           </div>
-          <div className="flex nav-links flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 content-center">
+          <div className="flex nav-links flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 content-center">
             <NavbarLink name="Home" href="/" />
             <NavbarLink name="Product" href="/ourProducts" />
             <NavbarLink name="Career" href="/career" />
