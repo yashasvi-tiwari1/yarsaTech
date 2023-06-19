@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { IconSun, IconMoon } from "@tabler/icons-react";
+
 function Mode() {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -12,26 +13,31 @@ function Mode() {
 
   if (!mounted) return null;
   const currentTheme = theme === "system" ? systemTheme : theme;
+
+  // Conditional styling for moon icon color
+  const moonIconColor = currentTheme === "dark" ? "text-white" : "text-black";
+
   return (
-    <div>
-      <div className="flex justify-center">
-        {currentTheme === "dark" ? (
-          <button
-            className="hover:bg-black rounded-md p-1"
-            onClick={() => setTheme("light")}
-          >
-            <IconSun strokeWidth={1.5} className="h-6 w-6" />
-          </button>
-        ) : (
-          <button
-            className="p-1 hover:bg-gray-100 text-black rounded-md"
-            onClick={() => setTheme("dark")}
-          >
-            <IconMoon strokeWidth={1.5} className="h-6 w-6" />
-          </button>
-        )}
+      <div>
+        <div className="flex justify-center">
+          {currentTheme === "light" ? (
+              <button
+                  className=" rounded-md p-1 text-black"
+                  onClick={() => setTheme("dark")}
+              >
+                <IconSun strokeWidth={1.5} className="h-6 w-6" />
+              </button>
+          ) : (
+              <button
+                  className={`p-1  rounded-md ${moonIconColor}`}
+                  onClick={() => setTheme("light")}
+              >
+                <IconMoon strokeWidth={1.5} className="h-6 w-6" />
+              </button>
+          )}
+        </div>
       </div>
-    </div>
   );
 }
+
 export default Mode;

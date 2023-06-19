@@ -133,6 +133,7 @@ function ProductDetails() {
   });
   useEffect(() => {
     const { id } = navigate.query;
+    console.log('jhghjghjgjhgjhgjhg')
     axios
       .get(
         `${BASEURL}/items/products/${id}?fields=*.product_category_id.name,images.images_id.*.image_category_id.name`
@@ -141,7 +142,7 @@ function ProductDetails() {
         setProducts(response.data?.data);
       })
       .catch((error) => {});
-  }, []);
+  }, [navigate.query]);
 
   let images: [] = products.images;
   let product_features = products.features.split("-");
@@ -212,26 +213,26 @@ function ProductDetails() {
           <p className=" md:text-5xl md:text-center font-bold text-2xl mt-10 ">
             Product Highlight
           </p>
-          <p className="md:text-2xl">{products.highlight}</p>
+          <p className="md:text-2xl max-w-2xl mx-auto">{products.highlight}</p>
         </div>
         <div className="max-w-2xl container mx-auto px-8 md:mt-24 mt-10 space-y-4">
-          <p className="text-2xl font-bold ">Device Features</p>
-          <div className=" md:text-xl ">
+          <p className="text-3xl font-bold mx-auto max-w-2xl ">Device Features</p>
+          <div className=" md:text-xl  mx-auto max-w-2xl ">
             {product_features.map((feature) => {
               return <div>- {feature}</div>;
             })}
           </div>
         </div>
-        <div className="md:mt-24 container mt-10 px-8 max-w-2xl mx-auto space-y-4">
-          <p className="text-2xl font-bold">Support and Maintenance</p>
-          <div className="md:text-xl">
+        <div className="md:mt-24 container mt-10 px-8  space-y-4">
+          <p className="text-3xl font-bold max-w-2xl mx-auto ">Support and Maintenance</p>
+          <div className="md:text-xl max-w-2xl mx-auto">
             {support_and_maintenance.map((support) => {
               return <div>- {support} </div>;
             })}
           </div>
         </div>
-        <div className="md:my-24 my-10 px-8 md:px-16 container  md:space-y-6">
-          <p className="md:text-5xl text-2xl md:text-center font-bold">
+        <div className="md:my-24 bg-white dark:bg-black my-10 px-8 md:px-16 container  md:space-y-6">
+          <p className="md:text-5xl text-2xl max-w-2xl mx-auto font-bold">
             Variants for Every Needs.
           </p>
           <div className="md:flex  gap-6 py-4 md:space-y-0 space-y-6">
@@ -250,7 +251,7 @@ ProductDetails.getLayout = function getLayout(page: ReactElement) {
 
 function DetailCard({ detail }: { detail: DetailProps }) {
   return (
-    <div className="p-5 w-full rounded-2xl shadow">
+    <div className="p-5 w-full border-2 rounded-2xl shadow">
       <p className="font-semibold md:text-2xl">{detail.title}</p>
       <p className="mt-5">{detail.subtitle}</p>
       <div className="mt-5 space-y-8  h-max">

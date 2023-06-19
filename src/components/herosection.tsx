@@ -20,7 +20,7 @@ function Herosection() {
           <p>ideation, prototyping, testing and production</p> of consumer grade
           electronics in Nepal.
         </div>
-        <button className="rounded-md text-white text-base bg-custom-blue py-3 px-5 tracking-wider mt-5 md:mt-10">
+        <button className="rounded-xl text-white text-base bg-custom-blue py-3 px-5 tracking-wider mt-5 md:mt-10">
           Learn more
         </button>
       </div>

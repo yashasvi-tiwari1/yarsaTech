@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconMenu2, IconSearch } from "@tabler/icons-react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import Mode from "@tech/components/mode";
 
@@ -36,6 +36,9 @@ function Navbar() {
             Yarsa Tech
           </span>
         </Link>
+        <div className="block sm:hidden">
+          <Mode/>
+        </div>
         <div className="flex md:hidden">
           <button
             name="menu"
@@ -46,35 +49,33 @@ function Navbar() {
             aria-expanded="false"
             onClick={toggleMenu}
           >
-            <span className="sr-only">Open menu</span>
-            <IconMenu2 className="w-6 h-6" />
+            <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
+            {isMenuOpen? (
+                <IconX className="w-6 h-6" />
+            ) : (
+                <IconMenu2 className="w-6 h-6" />
+            )}
           </button>
         </div>
+
         <div
           className={`items-center justify-between w-full md:flex md:w-auto ${
             isMenuOpen ? "block" : "hidden"
           }`}
           id="navbar-search"
         >
-          <div className="relative mt-3 md:hidden">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <IconSearch className="text-gray-500 w-6 h-6" />
-            </div>
-            <input
-              type="text"
-              id="search-navbar"
-              className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search..."
-            />
-          </div>
+
           <div className="flex nav-links flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 content-center">
             <NavbarLink name="Home" href="/" />
             <NavbarLink name="Product" href="/ourProducts" />
             <NavbarLink name="Career" href="/career" />
           </div>
         </div>
-        <Mode />
+        <div className="hidden md:block">
+          <Mode/>
+        </div>
       </div>
+
     </nav>
   );
 }

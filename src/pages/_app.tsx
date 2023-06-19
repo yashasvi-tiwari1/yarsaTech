@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import React from "react";
 import { IconSquareChevronsUp } from "@tabler/icons-react";
 import NextProgress from "next-progress";
+import Layout from "@tech/components/Layout";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -23,8 +24,9 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     <>
       <NextProgress />
       <ThemeProvider enableSystem={true} attribute={"class"}>
-        {getLayout(<Component {...pageProps} />)}
+      {getLayout(<Component {...pageProps} />)}
       </ThemeProvider>
+
     </>
   );
 }

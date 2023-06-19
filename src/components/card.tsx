@@ -124,7 +124,7 @@ const ProductCard = ({ product }: any) => {
               query: { id: product.id },
             });
           }}
-          className="bg-custom-blue w-max mt-4 px-4 py-2 text-sm rounded-md text-white"
+          className="bg-custom-blue w-max mt-4 px-4 py-2 text-sm rounded-2xl text-white"
         >
           Know more
         </button>

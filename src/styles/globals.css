@@ -15,13 +15,12 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-
         --foreground-rgb: 255, 255, 255;
         --background-start-rgb: 0, 0, 0;
         --background-end-rgb: 0, 0, 0;
     }
     *{
-        border-color: #3a3838;
+        @apply dark:border-gray-800 ;
     }
 }
 
@@ -37,6 +36,9 @@
     z-index: 9999;
     display: none;
     /* Add your desired styles for the button */
+}
+button{
+    border-radius: 20px;
 }
 
 body {
