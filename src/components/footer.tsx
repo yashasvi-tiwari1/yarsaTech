@@ -44,15 +44,15 @@ function Footer() {
           </div>
         </div>
         <div>
-          <span className="font-semibold"> Company </span>
+          <span className="font-semibold w-max"> Company </span>
           <div className="mt-3 flex flex-col">
-            <a href="/about" className="hover:text-blue-600">
+            <a href="/about" className="hover:text-blue-600 w-max">
               About
             </a>
-            <a href="/career" className="hover:text-blue-600">
+            <a href="/career" className="hover:text-blue-600 w-max">
               Career
             </a>
-            <a href="/news" className="hover:text-blue-600">
+            <a href="/news" className="hover:text-blue-600 w-max">
               News/Update
             </a>
           </div>
@@ -63,11 +63,11 @@ function Footer() {
             <a href="/privacyPolicy" className="hover:text-custom-blue">
               Privacy Policy
             </a>
-            <a href="/termsOfService" className="hover:text-custom-blue">
-              <p>Terms of Service</p>
+            <a href="/termsOfService" className="hover:text-custom-blue ">
+              <p className="w-max">Terms of Service</p>
             </a>
             <a href="/thirdPartyServices">
-              <p>Third Party Services</p>
+              <p className="w-max">Third Party Services</p>
             </a>
           </div>
         </div>
@@ -75,7 +75,7 @@ function Footer() {
           <div className="space-y-4">
             <div>
               <a href="/team">
-                <p>Our Team</p>
+                <p className="w-max">Our Team</p>
               </a>
             </div>
             <div>

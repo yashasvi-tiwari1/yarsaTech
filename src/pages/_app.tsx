@@ -25,6 +25,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <NextProgress />
       <ThemeProvider enableSystem={true} attribute={"class"}>
       {getLayout(<Component {...pageProps} />)}
+
       </ThemeProvider>
 
     </>

@@ -249,14 +249,15 @@ ProductDetails.getLayout = function getLayout(page: ReactElement) {
   return <SiteLayout>{page}</SiteLayout>;
 };
 
-function DetailCard({ detail }: { detail: DetailProps }) {
+function
+DetailCard({ detail }: { detail: DetailProps }) {
   return (
     <div className="p-5 w-full border-2 rounded-2xl shadow">
       <p className="font-semibold md:text-2xl">{detail.title}</p>
       <p className="mt-5">{detail.subtitle}</p>
       <div className="mt-5 space-y-8  h-max">
         {detail.items.map((item) => (
-          <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center">
             {item.icon}
             <span>{item.label}</span>
           </div>
