@@ -11,6 +11,7 @@ import {
   IconBrandGithub,
   IconMail,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -18,21 +19,16 @@ function Footer() {
       <div className="md:flex space-y-6 flex-wrap justify-between px-8 container md:px-16 py-5">
         <div className="">
           <div className="flex items-center mt-3">
+            <Link href="/" className="flex items-center">
             <Image
-              height={64}
-              width={64}
-              src="/assets/logo.png"
-              className="mr-3  dark:hidden w-12 h-12"
-              alt="Yarsa Tech "
-            />
-            <Image
-              height={64}
-              width={64}
-              src="/assets/logo2.png"
-              className="mr-3  hidden dark:block  h-10 w-10"
-              alt="Yarsa Tech"
+                height={64}
+                width={64}
+                src="/assets/logo.png"
+                className="mr-3 dark:invert w-14 h-14 -ml-2"
+                alt="Yarsa Tech"
             />
             <h2 className="font-semibold">Yarsa Tech</h2>
+            </Link>
           </div>
           <div className="mt-3 flex gap-2 items-center">
             <IconMail className="h-6" />
@@ -60,13 +56,13 @@ function Footer() {
         <div>
           <span className="font-semibold"> Policies </span>
           <div className="mt-3">
-            <a href="/privacyPolicy" className="hover:text-custom-blue">
+            <a href="/privacyPolicy" className="hover:text-blue-600">
               Privacy Policy
             </a>
-            <a href="/termsOfService" className="hover:text-custom-blue ">
+            <a href="/termsOfService" className="hover:text-blue-600 ">
               <p className="w-max">Terms of Service</p>
             </a>
-            <a href="/thirdPartyServices">
+            <a href="/thirdPartyServices" className="hover:text-blue-600">
               <p className="w-max">Third Party Services</p>
             </a>
           </div>
@@ -74,7 +70,7 @@ function Footer() {
 
           <div className="space-y-4">
             <div>
-              <a href="/team">
+              <a href="/team" className="hover:text-blue-600">
                 <p className="w-max">Our Team</p>
               </a>
             </div>

@@ -106,17 +106,19 @@ function Card() {
 const ProductCard = ({ product }: any) => {
   const navigate = useRouter();
   return (
-    <div className=" rounded-lg shadow-sm border overflow-hidden flex flex-col border-b-2 w-full">
-      <div className="aspect-square w-full overflow-hidden">
-        <img
+    <div className=" rounded-lg shadow-sm border overflow-hidden flex flex-col border-b-2 w-full py-4">
+      <div className="aspect-square flex justify-center w-full overflow-hidden">
+        <Image
+            height={296}
+            width={296}
           src={`${BASEURL}/assets/${product.images?.[0]?.images_id?.image}`}
-          className="w-full h-full object-contain"
+          className="w-[296px] h-[296px] object-contain "
           alt=""
         />
       </div>
-      <div className="h-50 flex flex-col p-4">
+      <div className="h-50 flex flex-col px-4  space-y-4">
         <p className="text-xl font-semibold ">{product.name}</p>
-        <p className="mt-2 text-left">{product.description}</p>
+        <p className=" text-left ">{product.description}</p>
         <button
           onClick={() => {
             navigate.push({

@@ -55,8 +55,8 @@ const EmployeeCard = ({employee}:any) =>{
                alt="yarsa tech employee"
                />
             </div>
-            <div className="">{employee.name}</div>
-            <div className="">{employee.position}</div>
+            <div className="font-bold">{employee.name}</div>
+            <div className="text-custom-blue dark:text-blue-600 font-semibold">{employee.position}</div>
         </div>
 )
 }

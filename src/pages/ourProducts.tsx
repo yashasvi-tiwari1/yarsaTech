@@ -56,23 +56,23 @@ function OurProducts() {
           <p className="text-xl hidden sm:block md:text-3xl px-10 bold bg pt-2">
             Our Products
           </p>
-          <div className="relative px-10">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none" >
-              <IconSearch className="text-gray-500 w-6 h-6 ml-10 mb-2" />
+          <div className="relative px-10 items-center flex flex-col">
+            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none md:mb-2 " >
+              <IconSearch className="text-gray-500 dark:text-white  w-6 h-6 ml-8 md:ml-14 md:mt-0.5 " />
               <span className="sr-only">Search icon</span>
             </div>
             <TopButton/>
-            <input
+              <input
               type="text"
               id="search_navbar"
-              className="block w-full p-2 pl-8 sm:pl-16 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700"
+              className="block pl-12 ml-0.5 dark:text-white  w-72  p-2  sm:pl-16 text-md text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700"
               onChange={Search}
               placeholder="Search Product..."
-
             />
+
           </div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-10 p-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-8 md:p-10 p-5">
           {products.map((product: any) => {
             return (
               <div key={product.name}>
@@ -93,7 +93,7 @@ const Card = ({ product }: any) => {
   return (
     <div>
       <div className="border-2  rounded-2xl card-color bg-bg-card cursor-pointer transition-transform  duration-500 hover:scale-110 ease-in-out ">
-        <div className="h-56 overflow-hidden items-center">
+        <div className=" overflow-hidden items-center flex justify-center">
           <Image
             height={400}
             width={400}
@@ -104,12 +104,13 @@ const Card = ({ product }: any) => {
               });
             }}
             src={`${BASEURL}/assets/${product.images?.[0]?.images_id?.image}`}
-            className=" w-full h-full object-contain px-2 "
+            className=" w-[281px] h-[231px] object-contain "
             alt="yarsa tech product "
           />
         </div>
-        <div className="bg-card-color shadow-md w-full px-3 py-2 text-center rounded-b-2xl dark:text-black hover:bg-gray-300">
+        <div className="bg-card-color  shadow-md w-full  px-3 py-2 text-center rounded-b-2xl dark:text-black hover:bg-gray-300">
           <button
+              className="font-semibold"
             onClick={() => {
               navigate.push({
                 pathname: "/productDetails",

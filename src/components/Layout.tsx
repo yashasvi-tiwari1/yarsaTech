@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <motion.div
-        className={'bg-white dark:bg-black text-black dark:text-white'}
+        className={''}
       key={router.route}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}

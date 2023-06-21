@@ -27,11 +27,11 @@ function Herosection() {
       <div className="py-4 hidden lg:block md:ml-20 max-w-lg">
         <Image
           loading="eager"
-          width={800}
-          height={800}
-          className="h-full w-full object-contain"
+          width={500}
+          height={500}
+          className="h-[526px] w-[526px] object-contain"
           src="/assets/wallpaper.webp"
-          alt="this is audio QR"
+          alt=""
         />
       </div>
     </div>

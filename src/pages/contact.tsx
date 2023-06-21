@@ -3,7 +3,9 @@ import SiteLayout from "@tech/layouts/site-layout";
 import Layout from "@tech/components/Layout";
 import axios from "axios";
 import { BASEURL } from "@tech/globalConnect/apiContent";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -36,33 +38,57 @@ function Contact() {
   const handleMessage = (e: any) => {
     setMessage(e.target.value);
   };
-  function AddContact() {
-    let contactus = {
-      firstName: fname,
-      lastName: lname,
-      email,
-      phone,
-      message,
-    };
-    axios
-      .post(`${BASEURL}/items/contact_user`, JSON.stringify(contactus), {
-        headers: {
-          "content-type": "Application/json",
-        },
-      })
-      .then((response) => {
-        toast("successful", {
+    async function AddContact() {
+      console.log(email, phone, fname, lname, message)
+      if ( email && phone && fname && lname && message) {
+        if (email.match(/(^\w{0,100}@gmail.com$|^\w{0,100}@outlook.com$)/g)) {
+          if (phone.match(/(?:\(?\+977\)?)?[9][6-9]\d{8}|01[-]?[0-9]{7}/)) {
+            let contactus = {
+              firstName: fname,
+              lastName: lname,
+              email,
+              phone,
+              message,
+            };
+
+            axios
+                .post(`${BASEURL}/items/contact_user`, JSON.stringify(contactus), {
+                  headers: {
+                    "content-type": "Application/json",
+                  },
+                })
+                .then((response) => {
+                  toast("successful", {
+                    position: "bottom-center",
+                  });
+                  console.log(response.data);
+                  navigate.push("/");
+                })
+                .catch((error) => {
+                  toast(error.message);
+                });
+          } else {
+            toast.error("Please Enter Valid Email", {
+              position: "bottom-center",
+            });
+          }
+        } else {
+          toast.error("please enter the valid phone number", {
+            position: "bottom-center",
+          });
+        }
+      }
+      else{
+        toast.error("Please fill-up the form !", {
           position: "bottom-center",
         });
-        console.log(response.data);
-        navigate.push("/");
-      })
-      .catch((error) => {
-        toast(error.message);
-      });
-  }
+      }
+    }
+
+
   return (
     <Layout>
+
       <div className="md:py-20 md:px-16 p-8 space-y-4">
         <div className="md:text-3xl text-2xl md:px-16 container">
           <p className="text-custom-black dark:text-white">

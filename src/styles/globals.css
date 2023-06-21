@@ -41,8 +41,22 @@ button{
     border-radius: 20px;
 }
 
+.contact-button {
+    position: fixed;
+    top: 50%;
+    right: -36px;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+.contact-button button{
+    transform: rotate(270deg); /* Adjust the degree value as desired */
+}
+body{
+    @apply bg-white dark:bg-gray-950 text-black dark:text-white;
+}
+
 /*body {*/
-    /*color: rgb(var(--foreground-rgb));*/
+/*    color: rgb(var(--foreground-rgb));*/
 /*    background: linear-gradient(*/
 /*            to bottom,*/
 /*            transparent,*/

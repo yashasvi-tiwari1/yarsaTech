@@ -7,8 +7,8 @@ import TopButton from "@tech/components/TopButton";
 function PrivacyPolicy() {
   return (
     <Layout>
-      <div className="md:py-24 py-8 md:px-80 px-8 container">
-        <span className="text-2xl font-semibold text-custom-blue">
+      <div className="md:py-24 py-8 md:px-16 px-8 container">
+        <span className="text-2xl font-semibold text-blue-600">
           Privacy Policy
         </span>
         <div className="border">

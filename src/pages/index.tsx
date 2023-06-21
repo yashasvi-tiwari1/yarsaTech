@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { IconArrowsUp } from "@tabler/icons-react";
 import TopButton from "@tech/components/TopButton";
+import Contactus from "@tech/components/contactus";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ const Home: NextPageWithLayout = () => {
         <Card />
         <TopButton />
         <Motivation />
+          <Contactus/>
       </Layout>
       <ToastContainer />
     </>

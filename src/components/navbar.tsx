@@ -20,15 +20,7 @@ function Navbar() {
             height={64}
             width={64}
             src="/assets/logo.png"
-            className="mr-3  dark:hidden w-12 h-12"
-            alt="Yarsa Tech "
-          />
-
-          <Image
-            height={64}
-            width={64}
-            src="/assets/logo2.png"
-            className="mr-3  hidden dark:block w-12 h-12 "
+            className="mr-3 dark:invert w-14 h-14"
             alt="Yarsa Tech"
           />
 
@@ -69,6 +61,7 @@ function Navbar() {
             <NavbarLink name="Home" href="/" />
             <NavbarLink name="Product" href="/ourProducts" />
             <NavbarLink name="Career" href="/career" />
+            <NavbarLink name="Shop" href="https://www.google.com/"/>
           </div>
         </div>
         <div className="hidden md:block">

@@ -36,7 +36,7 @@
 //           <NavbarLink name="Home" href="/" />
 //           <NavbarLink name="ProductDetails" href="/product" />
 //           <NavbarLink name="Career" href="/job" />
-//           <NavbarLink name="Contact" href="/contact" />
+//           <NavbarLink name="Contactus" href="/contact" />
 //         </div>
 //         <div className="flex mr-0 flex-wrap ">
 //           <SearchIcon className="w-6 h-6 absolute ml-2 mt-1 z-10  text-gray-700" />

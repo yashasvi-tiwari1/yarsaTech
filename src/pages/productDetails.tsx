@@ -231,7 +231,7 @@ function ProductDetails() {
             })}
           </div>
         </div>
-        <div className="md:my-24 bg-white dark:bg-black my-10 px-8 md:px-16 container  md:space-y-6">
+        <div className="md:py-24 bg-white dark:bg-gray-950 py-10 px-8 md:px-16 container  md:space-y-6">
           <p className="md:text-5xl text-2xl max-w-2xl mx-auto font-bold">
             Variants for Every Needs.
           </p>
@@ -252,18 +252,27 @@ ProductDetails.getLayout = function getLayout(page: ReactElement) {
 function
 DetailCard({ detail }: { detail: DetailProps }) {
   return (
+
+      <>
+      {/*<p className="mt-5">{detail.subtitle}</p>*/}
+      {/*<div className="mt-5 space-y-8  h-max">*/}
+      {/*  {detail.items.map((item) => (*/}
+      {/*      <div className="flex gap-4 items-center">*/}
+      {/*      {item.icon}*/}
+      {/*      <span>{item.label}</span>*/}
+      {/*    </div>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
+
+
+
     <div className="p-5 w-full border-2 rounded-2xl shadow">
-      <p className="font-semibold md:text-2xl">{detail.title}</p>
-      <p className="mt-5">{detail.subtitle}</p>
-      <div className="mt-5 space-y-8  h-max">
-        {detail.items.map((item) => (
-            <div className="flex gap-4 items-center">
-            {item.icon}
-            <span>{item.label}</span>
-          </div>
-        ))}
-      </div>
+
     </div>
+      </>
+
+
+
   );
 }
 

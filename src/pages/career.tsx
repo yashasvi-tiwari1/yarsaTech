@@ -36,7 +36,7 @@ function Career() {
           width={600}
           src={`${BASEURL}/assets/${job.jobs_image}`}
           alt="hire us"
-          className=" rounded-3xl md:w-9/12 w-full ml-auto mr-auto"
+          className=" rounded-3xl md:w-9/12 ml-auto mr-auto"
         />
       </div>
     </Layout>
