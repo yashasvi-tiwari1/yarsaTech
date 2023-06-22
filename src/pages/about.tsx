@@ -1,15 +1,14 @@
 import { ReactElement } from "react";
 import SiteLayout from "@tech/layouts/site-layout";
-import Contact from "@tech/pages/contact";
 import Layout from "@tech/components/Layout";
 import Image from "next/image";
 
 function About() {
-  return (
+    return (
     <Layout>
       <div className="container p-8 md:py-24 md:px-32">
         <div className="md:flex gap-60 ">
-          <div className="text-justify">
+          <div className="">
             <p className="text-2xl md:text-4xl mb-6">Company Mission</p>
             <span>
               Yarsa Tech's mission is to transform everyday technology
@@ -25,7 +24,7 @@ function About() {
             </span>
           </div>
           <Image src="/assets/brain.png" alt="" height={200} width={200} />
-        </div>
+          </div>
       </div>
     </Layout>
   );
