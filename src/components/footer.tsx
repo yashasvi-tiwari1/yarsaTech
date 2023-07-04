@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+
 {
   /* eslint-disable @next/next/no-html-link-for-pages */
 }
@@ -20,14 +21,14 @@ function Footer() {
         <div className="">
           <div className="flex items-center mt-3">
             <Link href="/" className="flex items-center">
-            <Image
+              <Image
                 height={64}
                 width={64}
                 src="/assets/logo.png"
                 className="mr-3 dark:invert w-14 h-14 -ml-2"
                 alt="Yarsa Tech"
-            />
-            <h2 className="font-semibold">Yarsa Tech</h2>
+              />
+              <h2 className="font-semibold">Yarsa Tech</h2>
             </Link>
           </div>
           <div className="mt-3 flex gap-2 items-center">
@@ -68,30 +69,37 @@ function Footer() {
           </div>
         </div>
 
-          <div className="space-y-4">
-            <div>
-              <a href="/team" className="hover:text-blue-600">
-                <p className="w-max">Our Team</p>
-              </a>
-            </div>
-            <div>
-          <span className="font-semibold">Follow Us </span>
-          <div className="flex  flex-wrap  mt-2 gap-3">
-            <a href="https://www.facebook.com/yarsatechnologies">
-              <IconBrandFacebook className="w-6 h-6" />
+        <div className="space-y-4">
+          <div>
+            <a href="/team" className="hover:text-blue-600">
+              <p className="w-max font-semibold">Our Team</p>
             </a>
-            <a href="https://www.linkedin.com/company/yarsatech">
-              <IconBrandLinkedin className="w-6 h-6" />
-            </a>
-            <IconBrandGithub className="w-6 h-6" />
           </div>
+          <div>
+            <span className="font-semibold">Follow Us </span>
+            <div className="flex  flex-wrap  mt-2 gap-3">
+              <a
+                href="https://www.facebook.com/yarsatechnologies"
+                aria-label="Yarsa Tech Facebook"
+              >
+                <IconBrandFacebook className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/yarsatech"
+                aria-label="Yarsa Tech Linkedin"
+              >
+                <IconBrandLinkedin className="w-6 h-6" />
+              </a>
+              <IconBrandGithub className="w-6 h-6" />
             </div>
           </div>
         </div>
+      </div>
       <div className="text-center p-4 border-t">
         © 2021 - 2023 Yarsa Tech. All rights reserved.
       </div>
     </footer>
   );
 }
+
 export default Footer;

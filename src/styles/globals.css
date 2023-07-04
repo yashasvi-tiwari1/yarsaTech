@@ -37,9 +37,6 @@
     display: none;
     /* Add your desired styles for the button */
 }
-button{
-    border-radius: 20px;
-}
 
 .contact-button {
     position: fixed;

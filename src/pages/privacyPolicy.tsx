@@ -2,7 +2,6 @@ import React, { ReactElement } from "react";
 import SiteLayout from "@tech/layouts/site-layout";
 import Layout from "@tech/components/Layout";
 import { IconChevronRight, IconHome } from "@tabler/icons-react";
-import TopButton from "@tech/components/TopButton";
 
 function PrivacyPolicy() {
   return (
@@ -19,7 +18,6 @@ function PrivacyPolicy() {
             <IconChevronRight />
             <span>Privacy Policy</span>
           </div>
-          <TopButton />
           <div className="flex-col md:p-16 p-4  text-justify  md:text-md">
             <p className="mb-4">
               <i className="font-semibold text-lg">

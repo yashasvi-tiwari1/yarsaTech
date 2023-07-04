@@ -1,10 +1,9 @@
 import Image from "next/image";
 
-("use-client");
+// ("use-client");
 import React, { ReactElement, useEffect } from "react";
 import SiteLayout from "@tech/layouts/site-layout";
 import dynamic from "next/dynamic";
-// import Model from "@tech/components/model";
 import Layout from "@tech/components/Layout";
 import axios from "axios";
 import {
@@ -16,7 +15,6 @@ import {
 import { useRouter } from "next/router";
 import { string } from "prop-types";
 import { BASEURL } from "@tech/globalConnect/apiContent";
-import TopButton from "@tech/components/TopButton";
 
 const Model = dynamic(() => import("../components/model"), { ssr: false });
 
@@ -30,6 +28,7 @@ interface DetailProps {
   subtitle: string;
   items: Item[];
 }
+
 const details: DetailProps[] = [
   {
     title: "Wi-fi Basic",
@@ -133,7 +132,6 @@ function ProductDetails() {
   });
   useEffect(() => {
     const { id } = navigate.query;
-    console.log('jhghjghjgjhgjhgjhg')
     axios
       .get(
         `${BASEURL}/items/products/${id}?fields=*.product_category_id.name,images.images_id.*.image_category_id.name`
@@ -149,7 +147,7 @@ function ProductDetails() {
   let support_and_maintenance = products.support_maintenance.split("-");
   return (
     <Layout>
-      <div className=" md:px-16 ">
+      <div className=" md:px-16 md:pb-16 ">
         <div className="xl:flex text-custom-black container md:mb-24 mb-10">
           <div className="md:py-24 py-8 px-8 md:px-16 space-y-3 dark:text-white">
             <span className="md:text-6xl text-3xl  font-bold">
@@ -187,7 +185,6 @@ function ProductDetails() {
             })}
           </div>
         </div>
-        <TopButton />
         <div className=" md:space-y-6  px-8 md:text-center container">
           <p className="md:text-5xl text-2xl font-bold ">
             {products.main_features}
@@ -216,7 +213,9 @@ function ProductDetails() {
           <p className="md:text-2xl max-w-2xl mx-auto">{products.highlight}</p>
         </div>
         <div className="max-w-2xl container mx-auto px-8 md:mt-24 mt-10 space-y-4">
-          <p className="text-3xl font-bold mx-auto max-w-2xl ">Device Features</p>
+          <p className="text-3xl font-bold mx-auto max-w-2xl ">
+            Device Features
+          </p>
           <div className=" md:text-xl  mx-auto max-w-2xl ">
             {product_features.map((feature) => {
               return <div>- {feature}</div>;
@@ -224,40 +223,44 @@ function ProductDetails() {
           </div>
         </div>
         <div className="md:mt-24 container mt-10 px-8  space-y-4">
-          <p className="text-3xl font-bold max-w-2xl mx-auto ">Support and Maintenance</p>
+          <p className="text-3xl font-bold max-w-2xl mx-auto ">
+            Support and Maintenance
+          </p>
           <div className="md:text-xl max-w-2xl mx-auto">
             {support_and_maintenance.map((support) => {
               return <div>- {support} </div>;
             })}
           </div>
         </div>
-        <div className="md:py-24 bg-white dark:bg-black py-10 px-8 md:px-16 container  md:space-y-6">
-          <p className="md:text-5xl text-2xl max-w-2xl mx-auto font-bold">
-            Variants for Every Needs.
-          </p>
-          <div className="md:flex  gap-6 py-4 md:space-y-0 space-y-6">
-            {details.map((detail, index: number) => {
-              return <DetailCard key={index} detail={detail} />;
-            })}
+        {products.name === "Audio QR" && (
+          <div className="md:py-24 bg-white dark:bg-transparent py-10 px-8 md:px-16 container  md:space-y-6">
+            <p className="md:text-5xl text-2xl max-w-2xl mx-auto font-bold">
+              Variants for Every Needs.
+            </p>
+            <div className="md:flex  gap-6 py-4 md:space-y-0 space-y-6">
+              {details.map((detail, index: number) => {
+                return <DetailCard key={index} detail={detail} />;
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </Layout>
   );
 }
+
 ProductDetails.getLayout = function getLayout(page: ReactElement) {
   return <SiteLayout>{page}</SiteLayout>;
 };
 
-function
-DetailCard({ detail }: { detail: DetailProps }) {
+function DetailCard({ detail }: { detail: DetailProps }) {
   return (
     <div className="p-5 w-full border-2 rounded-2xl shadow">
       <p className="font-semibold md:text-2xl">{detail.title}</p>
       <p className="mt-5">{detail.subtitle}</p>
       <div className="mt-5 space-y-8  h-max">
         {detail.items.map((item) => (
-            <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center">
             {item.icon}
             <span>{item.label}</span>
           </div>

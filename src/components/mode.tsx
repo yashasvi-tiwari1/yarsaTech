@@ -18,25 +18,27 @@ function Mode() {
   const moonIconColor = currentTheme === "dark" ? "text-white" : "text-black";
 
   return (
-      <div>
-        <div className="flex justify-center">
-          {currentTheme === "light" ? (
-              <button
-                  className=" rounded-md p-1 text-black"
-                  onClick={() => setTheme("dark")}
-              >
-                <IconSun strokeWidth={1.5} className="h-6 w-6" />
-              </button>
-          ) : (
-              <button
-                  className={`p-1  rounded-md ${moonIconColor}`}
-                  onClick={() => setTheme("light")}
-              >
-                <IconMoon strokeWidth={1.5} className="h-6 w-6" />
-              </button>
-          )}
-        </div>
+    <div>
+      <div className="flex justify-center">
+        {currentTheme === "light" ? (
+          <button
+            className=" button rounded-md p-1 text-black"
+            aria-label="Icon Sun"
+            onClick={() => setTheme("dark")}
+          >
+            <IconSun strokeWidth={1.5} className="h-6 w-6" />
+          </button>
+        ) : (
+          <button
+            className={`p-1 button rounded-md ${moonIconColor}`}
+            aria-label="Icon Moon"
+            onClick={() => setTheme("light")}
+          >
+            <IconMoon strokeWidth={1.5} className="h-6 w-6" />
+          </button>
+        )}
       </div>
+    </div>
   );
 }
 

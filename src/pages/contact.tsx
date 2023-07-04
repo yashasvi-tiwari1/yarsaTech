@@ -4,12 +4,11 @@ import Layout from "@tech/components/Layout";
 import axios from "axios";
 import { BASEURL } from "@tech/globalConnect/apiContent";
 import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import TopButton from "@tech/components/TopButton";
 
 function Contact() {
   const [fname, setFname] = useState("");
@@ -38,57 +37,51 @@ function Contact() {
   const handleMessage = (e: any) => {
     setMessage(e.target.value);
   };
-    async function AddContact() {
-      console.log(email, phone, fname, lname, message)
-      if ( email && phone && fname && lname && message) {
-        if (email.match(/(^\w{0,100}@gmail.com$|^\w{0,100}@outlook.com$)/g)) {
-          if (phone.match(/(?:\(?\+977\)?)?[9][6-9]\d{8}|01[-]?[0-9]{7}/)) {
-            let contactus = {
-              firstName: fname,
-              lastName: lname,
-              email,
-              phone,
-              message,
-            };
 
-            axios
-                .post(`${BASEURL}/items/contact_user`, JSON.stringify(contactus), {
-                  headers: {
-                    "content-type": "Application/json",
-                  },
-                })
-                .then((response) => {
-                  toast("successful", {
-                    position: "bottom-center",
-                  });
-                  console.log(response.data);
-                  navigate.push("/");
-                })
-                .catch((error) => {
-                  toast(error.message);
-                });
-          } else {
-            toast.error("Please Enter Valid Email", {
-              position: "bottom-center",
-            });
-          }
-        } else {
-          toast.error("please enter the valid phone number", {
+  async function AddContact() {
+    try {
+      if (!email && !phone && !fname && !lname && !message) {
+        throw "Please fill up the form";
+      }
+
+      if (!email.match(/(^\w{0,100}@gmail.com$|^\w{0,100}@outlook.com$)/g)) {
+        throw "Please Enter Valid Email";
+      }
+      if (!phone.match(/(?:\(?\+977\)?)?[9][6-9]\d{8}|01[-]?[0-9]{7}/)) {
+        throw "Please enter the valid phone number";
+      }
+      let contactus = {
+        firstName: fname,
+        lastName: lname,
+        email,
+        phone,
+        message,
+      };
+
+      axios
+        .post(`${BASEURL}/items/contact_user`, JSON.stringify(contactus), {
+          headers: {
+            "content-type": "Application/json",
+          },
+        })
+        .then((response) => {
+          toast("successful", {
             position: "bottom-center",
           });
-        }
-      }
-      else{
-        toast.error("Please fill-up the form !", {
-          position: "bottom-center",
+          navigate.push("/");
+        })
+        .catch((error) => {
+          toast(error.message);
         });
-      }
+    } catch (err) {
+      toast.error(err, {
+        position: "bottom-center",
+      });
     }
-
+  }
 
   return (
     <Layout>
-
       <div className="md:py-20 md:px-16 p-8 space-y-4">
         <div className="md:text-3xl text-2xl md:px-16 container">
           <p className="text-custom-black dark:text-white">
@@ -112,7 +105,6 @@ function Contact() {
               className="w-11/12"
             />
           </div>
-          <TopButton />
           <div className="md:w-2/5 border shadow rounded-3xl md:ml-32 md:-mt-20 container ">
             <div className="md:p-10 p-5">
               <div className="md:flex gap-10 space-y-4 ">
@@ -177,7 +169,7 @@ function Contact() {
               </label>
               <button
                 onClick={AddContact}
-                className="rounded-md  text-white text-base bg-custom-blue py-3 px-5 tracking-wider  md:mt-10 mt-4"
+                className=" button rounded-md  text-white text-base bg-custom-blue py-3 px-5 tracking-wider  md:mt-10 mt-4"
               >
                 Contact us
               </button>
@@ -188,6 +180,7 @@ function Contact() {
     </Layout>
   );
 }
+
 Contact.getLayout = function getLayout(page: ReactElement) {
   return <SiteLayout>{page}</SiteLayout>;
 };

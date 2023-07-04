@@ -2,6 +2,10 @@ import Image from "next/image";
 import Mode from "@tech/components/mode";
 
 function Herosection() {
+  const LearnMore = () => {
+    window.location.href = "../pages/about.tsx";
+  };
+
   return (
     <div className="md:flex container p-8 md:px-16">
       <div className="md:py-24 py-8 w-full  max-w-xl shrink-0">
@@ -20,7 +24,10 @@ function Herosection() {
           <p>ideation, prototyping, testing and production</p> of consumer grade
           electronics in Nepal.
         </div>
-        <button className="rounded-xl text-white text-base bg-custom-blue py-3 px-5 tracking-wider mt-5 md:mt-10">
+        <button
+          className="button rounded-md text-white text-base bg-custom-blue py-3 px-5 tracking-wider mt-5 md:mt-10"
+          onClick={LearnMore}
+        >
           Learn more
         </button>
       </div>

@@ -8,45 +8,6 @@ import Image from "next/image";
 import axios from "axios";
 import { BASEURL } from "@tech/globalConnect/apiContent";
 import { useRouter } from "next/router";
-
-// const products: ProductDetails[] = [
-//   {
-//     imageName: "/assets/water.png",
-//     title: "Water Level Controller",
-//     description:
-//       "Automate water tank monitoring and control to eliminate the need for manual checks and prevent overflow. ",
-//   },
-//   {
-//     imageName: "/assets/soundbox.png",
-//     title: "Audio QR",
-//     description:
-//       "Instant payment confirmation by voice for eSewa Transactions.Peace of mind for merchants and customers.",
-//   },
-//   {
-//     imageName: "/assets/router.png",
-//     title: "Router UPS",
-//     description:
-//       "Yarsa Tech is working tirelessly, building an awesome, easily-installed piece of power backup hardware.",
-//   },
-//   {
-//     imageName: "/assets/light.png",
-//     title: "Automatic Light Controller",
-//     description:
-//       "It tracks luminosity variables, switching lamps on/off effortlessly without manual intervention.",
-//   },
-//   {
-//     imageName: "/assets/Smartwatch.png",
-//     title: "Automatic Smart Watch",
-//     description:
-//       " This automatic smart watch track health, manage communications without carrying phones.",
-//   },
-//   {
-//     imageName: "/assets/roti.png",
-//     title: "Automatic Roti Maker",
-//     description:
-//       "It used to prepares homemade rotis with a one-touch operation and ensuring consistent results.",
-//   },
-// ];
 function Card() {
   const [products, setProducts] = React.useState([]);
   const navigate = useRouter();
@@ -126,7 +87,7 @@ const ProductCard = ({ product }: any) => {
               query: { id: product.id },
             });
           }}
-          className="bg-custom-blue w-max mt-4 px-4 py-2 text-sm rounded-2xl text-white"
+          className="bg-custom-blue w-max mt-4 px-4 py-2 text-sm rounded-md text-white"
         >
           Know more
         </button>

@@ -16,7 +16,7 @@ function Motivation() {
           </p>
           <Link
             href="https://www.yarsalabs.com/careers/"
-            className="rounded-xl text-white text-base bg-custom-blue py-3 px-5 tracking-wider mt-5 md:mt-10"
+            className="rounded-md text-white text-base bg-custom-blue py-3 px-5 tracking-wider mt-5 md:mt-10"
           >
             Explore Career
           </Link>
