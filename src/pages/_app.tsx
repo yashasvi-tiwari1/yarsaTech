@@ -7,7 +7,7 @@ import React from "react";
 import { IconSquareChevronsUp } from "@tabler/icons-react";
 import NextProgress from "next-progress";
 import Layout from "@tech/components/Layout";
-import {ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -24,13 +24,10 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <NextProgress />
-        <ToastContainer />
-
-        <ThemeProvider enableSystem={true} attribute={"class"}>
-      {getLayout(<Component {...pageProps} />)}
-
+      <ToastContainer />
+      <ThemeProvider enableSystem={true} attribute={"class"}>
+        {getLayout(<Component {...pageProps} />)}
       </ThemeProvider>
-
     </>
   );
 }

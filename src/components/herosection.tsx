@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Mode from "@tech/components/mode";
+import { useRouter } from "next/router";
+import { query } from "@lit/reactive-element/decorators";
 
 function Herosection() {
-  const LearnMore = () => {
-    window.location.href = "../pages/about.tsx";
+  const router = useRouter();
+  const handleClick = () => {
+    router.push({
+      pathname: "/about",
+    });
   };
 
   return (
@@ -26,7 +31,7 @@ function Herosection() {
         </div>
         <button
           className="button rounded-md text-white text-base bg-custom-blue py-3 px-5 tracking-wider mt-5 md:mt-10"
-          onClick={LearnMore}
+          onClick={handleClick}
         >
           Learn more
         </button>
@@ -34,10 +39,10 @@ function Herosection() {
       <div className="py-4 hidden lg:block md:ml-20 max-w-lg">
         <Image
           loading="eager"
-          width={500}
-          height={500}
+          width={900}
+          height={900}
           className="h-[526px] w-[526px] object-contain"
-          src="/assets/wallpaper.webp"
+          src="/assets/wallpaper.svg"
           alt=""
         />
       </div>

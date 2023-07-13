@@ -3,53 +3,56 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
-*{
-    padding: 0;
-    margin: 0;
-    font-family: Inter, sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
-    }
-    *{
-        @apply dark:border-gray-800 ;
-    }
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+
+  * {
+    @apply dark:border-gray-800;
+  }
 }
 
-
-.container{
-    @apply mx-auto max-w-screen-xl
+.container {
+  @apply mx-auto max-w-screen-xl;
 }
 
 .top-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    display: none;
-    /* Add your desired styles for the button */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: none;
+  /* Add your desired styles for the button */
 }
 
 .contact-button {
-    position: fixed;
-    top: 50%;
-    right: -36px;
-    transform: translateY(-50%);
-    z-index: 9999;
+  position: fixed;
+  top: 50%;
+  right: -36px;
+  transform: translateY(-50%);
+  z-index: 9999;
 }
-.contact-button button{
-    transform: rotate(270deg); /* Adjust the degree value as desired */
+
+.contact-button button {
+  transform: rotate(270deg); /* Adjust the degree value as desired */
 }
-body{
-    @apply bg-white dark:bg-gray-950 text-black dark:text-white;
+
+body {
+  @apply bg-white dark:bg-gray-950 text-black dark:text-white;
 }
 
 /*body {*/
